@@ -9,12 +9,38 @@
   <body>
     <div class="container">
       <!-- quiz start -->
-      <!-- quiz game -->
-      <!-- quiz end -->
       <div class="quiz-start">
         <h1>Quiz Game!</h1>
         <p>Test your knowledge with these fun questions</p>
         <button>Start Quiz</button>
+      </div>
+
+      <!-- quiz game -->
+      <div class="quiz-game active">
+        <h1 class="question">What is the capital of france</h1>
+        <div class="question-info">
+          <p>
+            Question <span class="current-question">1</span> of
+            <span class="total-question">5</span>
+          </p>
+          <p>Score: <span class="score-so-far">0</span></p>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-percent"></div>
+        </div>
+      </div>
+
+      <!-- quiz end -->
+      <div class="quiz-end">
+        <h1>Quiz Results!</h1>
+        <div class="quiz-result-info">
+          <p class="quiz-result-score">
+            Your scored <span class="correct-answer">3</span> out of
+            <span class="total-question">5</span>
+          </p>
+          <p class="motivation-line">Great effort! Keep learning!</p>
+        </div>
+        <button>Restart Quiz</button>
       </div>
     </div>
     <script src="script.js"></script>
