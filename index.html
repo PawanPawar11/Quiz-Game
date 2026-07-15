@@ -9,29 +9,32 @@
   <body>
     <div class="container">
       <!-- quiz start -->
-      <div class="quiz-start">
+      <div class="quiz-start active" id="quiz-start-screen">
         <h1>Quiz Game!</h1>
         <p>Test your knowledge with these fun questions</p>
-        <button>Start Quiz</button>
+        <button id="start-quiz-btn">Start Quiz</button>
       </div>
 
       <!-- quiz game -->
-      <div class="quiz-game active">
-        <h1 class="question">What is the capital of france</h1>
+      <div class="quiz-game" id="quiz-game-screen">
+        <h1 id="question" class="question">What is the capital of germany</h1>
         <div class="question-info">
           <p>
-            Question <span class="current-question">1</span> of
-            <span class="total-question">5</span>
+            Question <span id="current-question">1</span> of
+            <span id="total-questions">5</span>
           </p>
-          <p>Score: <span class="score-so-far">0</span></p>
+          <p>Score: <span id="score-so-far">0</span></p>
         </div>
+
+        <div class="answer-container" id="answer-container"></div>
+
         <div class="progress-bar">
           <div class="progress-percent"></div>
         </div>
       </div>
 
       <!-- quiz end -->
-      <div class="quiz-end">
+      <div class="quiz-end" id="quiz-end-screen">
         <h1>Quiz Results!</h1>
         <div class="quiz-result-info">
           <p class="quiz-result-score">
