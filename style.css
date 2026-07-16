@@ -131,6 +131,8 @@
 .progress-bar {
   width: 100%;
   height: 1rem;
+  background-color: #f08c003d;
+  border-radius: 10px;
 }
 
 .progress-percent {
@@ -189,6 +191,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #fe9400;
+  text-align: center;
 }
 
 .quiz-end button {

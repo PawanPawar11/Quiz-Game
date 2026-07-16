@@ -1,51 +1,54 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Game</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- quiz start -->
-      <div class="quiz-start active" id="quiz-start-screen">
-        <h1>Quiz Game!</h1>
-        <p>Test your knowledge with these fun questions</p>
-        <button id="start-quiz-btn">Start Quiz</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- quiz start -->
+    <div class="quiz-start active" id="quiz-start-screen">
+      <h1>Quiz Game!</h1>
+      <p>Test your knowledge with these fun questions</p>
+      <button id="start-quiz-btn">Start Quiz</button>
+    </div>
+
+    <!-- quiz game -->
+    <div class="quiz-game" id="quiz-game-screen">
+      <h1 id="question" class="question">What is the capital of germany</h1>
+      <div class="question-info">
+        <p>
+          Question <span id="current-question">1</span> of
+          <span id="total-questions">5</span>
+        </p>
+        <p>Score: <span id="score-so-far">0</span></p>
       </div>
 
-      <!-- quiz game -->
-      <div class="quiz-game" id="quiz-game-screen">
-        <h1 id="question" class="question">What is the capital of germany</h1>
-        <div class="question-info">
-          <p>
-            Question <span id="current-question">1</span> of
-            <span id="total-questions">5</span>
-          </p>
-          <p>Score: <span id="score-so-far">0</span></p>
-        </div>
+      <div class="answer-container" id="answer-container"></div>
 
-        <div class="answer-container" id="answer-container"></div>
-
-        <div class="progress-bar">
-          <div class="progress-percent"></div>
-        </div>
-      </div>
-
-      <!-- quiz end -->
-      <div class="quiz-end" id="quiz-end-screen">
-        <h1>Quiz Results!</h1>
-        <div class="quiz-result-info">
-          <p class="quiz-result-score">
-            Your scored <span class="correct-answer">3</span> out of
-            <span class="total-question">5</span>
-          </p>
-          <p class="motivation-line">Great effort! Keep learning!</p>
-        </div>
-        <button>Restart Quiz</button>
+      <div class="progress-bar">
+        <div class="progress-percent" id="progress-percent"></div>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <!-- quiz end -->
+    <div class="quiz-end" id="quiz-end-screen">
+      <h1>Quiz Results!</h1>
+      <div class="quiz-result-info">
+        <p class="quiz-result-score">
+          Your scored <span class="correct-answer" id="final-score">3</span> out of
+          <span class="total-question" id="max-score">5</span>
+        </p>
+        <p class="motivation-line" id="result-message">Great effort! Keep learning!</p>
+      </div>
+      <button id="restart-btn">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -7,6 +7,11 @@ const totalQuestions = document.getElementById("total-questions");
 const scoreSoFar = document.getElementById("score-so-far");
 const answerContainer = document.getElementById("answer-container");
 const quizEndContainer = document.getElementById("quiz-end-screen");
+const progressPercent = document.getElementById("progress-percent");
+const finalScoreSpan = document.getElementById("final-score");
+const maxScoreSpan = document.getElementById("max-score");
+const resultMessage = document.getElementById("result-message");
+const restartBtn = document.getElementById("restart-btn");
 
 const quizQuestions = [
   {
@@ -61,6 +66,7 @@ let score = 0;
 let answerDisabled = false;
 
 startQuizBtn.addEventListener("click", () => {
+  // show quiz game screen and hide start screen
   quizStartContainer.classList.remove("active");
   quizGameContainer.classList.add("active");
 
@@ -72,6 +78,8 @@ function showQuestions() {
 
   currentQuestion.textContent = currentIndex + 1;
   totalQuestions.textContent = quizQuestions.length;
+
+  progressPercent.style.width = (currentIndex / quizQuestions.length) * 100 + "%";
 
   const currentQuestionBlock = quizQuestions[currentIndex];
 
@@ -126,4 +134,25 @@ function selectAnswer(event) {
 function showResult() {
   quizGameContainer.classList.remove("active");
   quizEndContainer.classList.add("active");
+
+  finalScoreSpan.textContent = score;
+  maxScoreSpan.textContent = quizQuestions.length;
+
+  if (score === quizQuestions.length) {
+    resultMessage.textContent = "Excellent! You got all the answers right!";
+  } else if (score >= quizQuestions.length / 2) {
+    resultMessage.textContent = "Good job! You scored more than half!";
+  } else {
+    resultMessage.textContent = "Keep trying! You'll get better with practice!";
+  }
+
+  restartBtn.addEventListener("click", () => {
+    // reset variables values and show quiz start screen
+    currentIndex = 0;
+    score = 0;
+    scoreSoFar.textContent = score;
+
+    quizEndContainer.classList.remove("active");
+    quizStartContainer.classList.add("active");
+  });  
 }
